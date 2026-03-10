@@ -4,20 +4,18 @@ name: 01 - Building Blocks
 on: push
 
 jobs:
-  echo-hello: 
+  echo-hello:
     runs-on: ubuntu-latest
-    steps: 
-      -name: Say hello
-      run: echo "Hello World!"
+    steps:
+      - name: Say hello
+        run: echo "Hello World!"
 
-  echo-goodbye: 
-    run-on: ubuntu-latest
-    steps: 
-      -name: Success step
-      run: | 
-        echo "I will succed"  
-        exit 0 
-      -name: Say goodbye
-      run: | 
-        echo "goodbye!"  
-        
+  echo-goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Success step
+        run: |
+          echo "I will succed"  
+          exit 0
+      - name: Say goodbye
+        run: echo "goodbye!"
