@@ -13,7 +13,7 @@ jobs:
   echo-goodbye: 
     run-on: ubuntu-latest
     steps: 
-      -name: Failed step
+      -name: Success step
       run: | 
         echo "I will succed"  
         exit 0 
