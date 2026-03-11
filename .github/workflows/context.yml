@@ -17,3 +17,6 @@ jobs:
                   echo "workflow name :  ${{github.workflow}}"
                   echo "Run id :  ${{github.run_id}}"
                   echo "Run number :  ${{github.run_number}}"
+            - name: Retreive Variable
+              run: |
+                  echo "Event name :  ${{var.MY_VAR}}"
