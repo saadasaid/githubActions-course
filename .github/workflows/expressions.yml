@@ -1,0 +1,27 @@
+name: expressions workflow
+
+on:
+    push:
+    workflow_dispatch:
+        inputs:
+            debug:
+                type: boolean
+                default: false
+
+jobs:
+    echoexpression:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Print Start-up"
+              if: ${{inputs.debug}}
+              run: |
+                  echo "Triggred by : ${{github.event_name}} "
+                  echo "Branch : ${{github.ref}}"
+                  echo "Commit Sha : ${{github.sha}}"
+                  echo "Runner OS : ${{runner.os}}"
+            - name: "[debug] Print when triggred from main"
+              if: ${{inputs.debug && github.ref == 'refs/head/main'}}
+              run: |
+                  echo "Triggred from main "
+            - name: "Greeting"
+              run: echo " Hello world "
