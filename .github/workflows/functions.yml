@@ -8,12 +8,12 @@ jobs:
     run_functions:
         runs-on: ubuntu-latest
         steps:
-            - name: failing step
-              run: exit 1
-            - name: I will be skipped
+            - name: success step
+              run: echo "Hello world"
+            - name: I will be excuted
               if: ${{success()}}
               run: echo "I will print if previous steps succed"
-            - name: I will be excuted
+            - name: I will be skipped
               if: ${{failure()}}
               run: echo "I will print if previous steps fail"
             - name: workflow excution on success
